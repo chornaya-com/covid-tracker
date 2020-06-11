@@ -58,7 +58,6 @@ export function Chart({data: {confirmed, recovered, deaths}, country}) {
         )
     }
 
-
     return (
         <div className={styles.container}>
             {country ? barChart : lineChart}
