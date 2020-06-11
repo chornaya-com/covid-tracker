@@ -12,7 +12,7 @@ export function Chart() {
         }
 
         fetchAPI();
-    })
+    },[])
 
     let lineChart = null;
 
