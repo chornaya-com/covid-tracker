@@ -10,7 +10,8 @@ Implemented with React, Chart.js, Axios, Material UI and Firebase integration.
 
 - [x] firebase setup
 - [x] statistics on infected, recovered and deaths
-- [x] global statistics and by country
+- [x] global statistics
+- [x] statistics by country
 
 ## How To
 ### Install Dependencies
