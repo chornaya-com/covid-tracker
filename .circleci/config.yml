@@ -1,7 +1,52 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
+jobs:
+  prepare:
+    docker:
+      - image: cimg/node:12.16
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: yarn install
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+  build:
+    docker:
+      - image: cimg/node:12.16
+    working_directory: ~/repo
+    steps:
+      - attach_workspace:
+          at: .
+      - run: yarn build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+    deploy:
+      docker:
+        - image: cimg/node:12.16
+      working_directory: ~/repo
+      steps:
+        - attach_workspace:
+            at: .
+        - run: yarn deploy --token="$FIREBASE_TOKEN"
+        - persist_to_workspace:
+            root: .
+            paths:
+              - .
 workflows:
-  node-tests:
-    jobs:
-      - node/test
+  jobs:
+    - prepare
+    - build:
+        requires:
+          - prepare
+    - deploy:
+        requires:
+          - build
+        filters:
+          branches:
+            only:
+              - master
+
+
