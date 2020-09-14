@@ -35,6 +35,6 @@ yarn build
 ```
 - deploy to firebase:
 ```
-firebase deploy
+yarn deploy
 ```
 
