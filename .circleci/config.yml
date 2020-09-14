@@ -36,17 +36,17 @@ jobs:
           paths:
             - .
 workflows:
-  jobs:
-    - prepare
-    - build:
-        requires:
-          - prepare
-    - deploy:
-        requires:
-          - build
-        filters:
-          branches:
-            only:
-              - master
-
+  app:
+    jobs:
+      - prepare
+      - build:
+          requires:
+            - prepare
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
 
