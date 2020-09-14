@@ -1,4 +1,8 @@
 # Covid-19 Tracker
+[![CircleCI](https://circleci.com/gh/chornaya-com/covid-tracker/tree/master.svg?style=svg&circle-token=63f6f27e841f7eff22bbd348eaee6daf742f2c66)](https://circleci.com/gh/chornaya-com/covid-tracker/tree/master)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#)
+
 Covid-19 Tracker (incl. statistics on infected, recovered and number of deaths globally and by country).
 Implemented with React, Chart.js, Axios, Material UI and Firebase integration.
 
